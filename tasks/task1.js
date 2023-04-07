@@ -1,7 +1,7 @@
 const ethers = require('ethers');
 const readlineSync = require('readline-sync');
 
-async function main() {
+async function task_1() {
 
     let choice = readlineSync.question(`
         Выберите один из возможных провайдеров: 
@@ -14,12 +14,12 @@ async function main() {
         let provider = ethers.getDefaultProvider(network);
         await provider.getNetwork().then(console.log)
     } else if (choice === '2') {
-        let network = readlineSync.question('Укажите точку подключения: ');
+        network = readlineSync.question('Укажите точку подключения: ');
         provider = new ethers.providers.JsonRpcProvider(network);
         await provider.getNetwork().then(console.log)
     } else if (choice === '3') {
-        let api = readlineSync.question('Укажите поставщика API: ');
-        let network = readlineSync.question('Укажите сеть: ');
+        network = readlineSync.question('Укажите сеть: ');
+        let api = readlineSync.question('Укажите поставщика API: ');      
         let key = readlineSync.question('Укажите API ключ: ');
         if (api === 'Alchemy') {
             provider = new ethers.providers.AlchemyProvider(network, key);
@@ -28,4 +28,4 @@ async function main() {
     }
 }
 
-main();
+task_1();
