@@ -10,11 +10,9 @@ async function task_4() {
     transactionRequest.value = readlineSync.question('Введите сумму эфира: ');
 
     let choice = readlineSync.question(`
-        Хотите вызвать функцию контракта? : 
-        1. Да, хочу вызвать функцию контракта
-        2. Нет, не хочу вызывать функцию контракта
+        Хотите вызвать функцию контракта?  (y/n): 
     `)
-    if (choice === '1') {
+    if (choice.toLowerCase() === 'y') {
         transactionRequest.data = readlineSync.question('Введите данные: ');
     }
 
