@@ -2,9 +2,7 @@ const ethers = require('ethers');
 const readlineSync = require('readline-sync');
 
 async function task_4() {
-    let provider = new ethers.providers.JsonRpcProvider(
-        'https://eth-goerli.g.alchemy.com/v2/XdE1v9zVDSoRe6S5013cteykw1ZDC0u9'
-    );
+    let provider = new ethers.providers.JsonRpcProvider('https://eth-goerli.g.alchemy.com/v2/XdE1v9zVDSoRe6S5013cteykw1ZDC0u9');
 
     let transactionRequest = {};
     transactionRequest.from = readlineSync.question('Введите адрес отправителя: ');
